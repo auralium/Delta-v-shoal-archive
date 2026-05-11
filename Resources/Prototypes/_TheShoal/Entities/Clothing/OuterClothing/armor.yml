@@ -31,3 +31,14 @@
     sprite: _TheShoal/Clothing/OuterClothing/enforcercommanderplatemail.rsi
   - type: Clothing
     sprite: _TheShoal/Clothing/OuterClothing/enforcercommanderplatemail.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorShoalScout
+  name: shoal scout armor vest
+  description: A more traditional kevlar vest made by The Shoal for recon missions. For those who are grafted to machines many dont understand...
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/OuterClothing/scoutarmor.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/OuterClothing/scoutarmor.rsi
