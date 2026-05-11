@@ -37,3 +37,21 @@
     layers:
       Hair: HEAD
 
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetShoalscout
+  name: shoal scout helmet
+  description: A plastitanium helmet made with a larger visor compared to traditional shoal helmets. For those who were dead a thousand times...
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Head/Helmets/scouthelm.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Head/Helmets/scouthelm.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD

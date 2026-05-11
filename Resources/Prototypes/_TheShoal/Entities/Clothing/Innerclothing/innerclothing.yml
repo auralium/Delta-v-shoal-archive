@@ -9,3 +9,14 @@
     sprite: _TheShoal/Clothing/Innerclothing/coercialisgarb.rsi
   - type: Clothing
     sprite: _TheShoal/Clothing/Innerclothing/coercialisgarb.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformShoalScoutsuit
+  name: shoal scout jumpsuit
+  description: A well fitting jumpsuit for those who follow an infinite spiraling path...
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Innerclothing/scoutsuit.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Innerclothing/scoutsuit.rsi
