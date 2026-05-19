@@ -42,3 +42,40 @@
     sprite: _TheShoal/Clothing/OuterClothing/scoutarmor.rsi
   - type: Clothing
     sprite: _TheShoal/Clothing/OuterClothing/scoutarmor.rsi
+
+#legion hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
+  id: ClothingOuterBattlecarapacemk1
+  name: battle carapace mk1
+  description: A tight fitting suit of leather and plastitanium
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/OuterClothing/battlecarapcacemk1.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/OuterClothing/battlecarapcacemk1.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.8
+        Caustic: 0.7
+  - type: StaminaResistance # DeltaV
+    damageCoefficient: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetBattlecarapacemk1
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
