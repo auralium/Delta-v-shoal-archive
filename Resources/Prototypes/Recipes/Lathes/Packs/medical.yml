@@ -32,8 +32,6 @@
   - ClothingEyesGlassesChemical
 
 - type: latheRecipePack
-  parent:
-  - SurgeryStaticShitmed # Shitmed change
   id: SurgeryStatic
   recipes:
   - Scalpel
@@ -85,11 +83,9 @@
   - MedkitBrute
   - MedkitAdvanced
   - MedkitRadiation
-  - MedkitCombat
+  #- MedkitCombat # DeltaV - No printable combat medkits
 
 - type: latheRecipePack
-  parent:
-  - MedicalBoardsStaticShitmed # Shitmed change
   id: MedicalBoardsStatic
   recipes:
   - ElectrolysisUnitMachineCircuitboard
@@ -117,7 +113,6 @@
 - type: latheRecipePack
   parent:
   - MedicalBoardsDeltaV # DeltaV
-  - MedicalBoardsShitmed # Shitmed change
   id: MedicalBoards
   recipes:
   - StasisBedMachineCircuitboard

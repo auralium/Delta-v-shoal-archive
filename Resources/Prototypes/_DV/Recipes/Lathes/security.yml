@@ -83,8 +83,8 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
-  id: MagazineBoxSpecialMindbreaker
-  result: MagazineBoxSpecialMindbreaker
+  id: MagazineBoxSpecialLernaea
+  result: MagazineBoxSpecialLernaea
   materials:
     Plastic: 1250
     Steel: 75
@@ -169,7 +169,7 @@
   id: MagazineBoxMagnumRubber
   result: MagazineBoxMagnumRubber
   materials:
-    Plastic: 240
+    Plastic: 480
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -430,26 +430,15 @@
     Steel: 1000
     Uranium: 250
 
-- type: latheRecipe
-  id: PyroLeftArm
-  result: PyroLeftArm
-  categories:
-  - Robotics
-  completetime: 5
-  materials:
-    Steel: 1500
-    Silver: 100
-    Plasma: 500
-    Bluespace: 300
+# Crafting base component for Unstable Core Refractor
 
 - type: latheRecipe
-  id: ZapLeftArm
-  result: ZapLeftArm
-  categories:
-  - Robotics
-  completetime: 5
+  parent: BaseWeaponRecipeLong
+  id: UnstableReactorHousing
+  result: UnstableReactorHousing
   materials:
-    Steel: 1500
-    Silver: 100
-    Plasma: 500
-    Bluespace: 300
+    Steel: 4500
+    Glass: 1500
+    Gold: 1500
+    Silver: 3000
+    Uranium: 1000

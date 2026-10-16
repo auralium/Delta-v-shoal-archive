@@ -1,5 +1,4 @@
 using Content.Shared.Administration.Logs;
-using Content.Shared.Body.Part; // DeltaV
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
@@ -17,7 +16,6 @@ using Content.Shared.Item;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Mind.Components; // DeltaV - Admin QOL
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Movement.Events;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
@@ -241,7 +239,7 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
                 args.Target.Value,
                 ent);
 
-            // var logSeverity = HasComp<HumanoidAppearanceComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High; // DeltaV - replaced below
+            // var logSeverity = HasComp<HumanoidProfileComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High; // DeltaV - replaced below
             var (logSeverity, hasMind) = LogValuesForTarget(args.Target.Value); // DeltaV
 
             _logger.Add(LogType.Action,
@@ -293,10 +291,7 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
             PopupType.MediumCaution);
 
         // Get a random entry to spawn.
-        // TODO: Replace with RandomPredicted once the engine PR is merged
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
-
+        var rand = SharedRandomExtensions.PredictedRandom(_gameTiming, GetNetEntity(ent));
         var index = rand.Next(butcherable.SpawnedEntities.Count);
         var entry = butcherable.SpawnedEntities[index];
 
@@ -320,16 +315,9 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
         // Gib the victim if there is nothing else to butcher.
         if (butcherable.SpawnedEntities.Count == 0)
         {
-            // DeltaV - Gib the body, then body parts, but leave the organs
-            var gibs = _gibbing.Gib(args.Target.Value);
-            foreach (var gib in gibs)
-            {
-                if (HasComp<BodyPartComponent>(gib))
-                    PredictedQueueDel(gib);
-            }
-            // END DeltaV
+            _gibbing.Gib(args.Target.Value);
 
-            // var logSeverity = HasComp<HumanoidAppearanceComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High; // DeltaV - replaced below
+            // var logSeverity = HasComp<HumanoidProfileComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High; // DeltaV - replaced below
             var (logSeverity, hasMind) = LogValuesForTarget(args.Target.Value); // DeltaV
 
             _logger.Add(LogType.Gib,

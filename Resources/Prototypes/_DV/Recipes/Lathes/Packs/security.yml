@@ -73,7 +73,7 @@
   - MagazineBoxSpecialIncendiary
   - MagazineBoxSpecialUranium
   - MagazineBoxSpecialHoly
-  - MagazineBoxSpecialMindbreaker
+  - MagazineBoxSpecialLernaea
   - MagazinePistolHighCapacityUranium
   - MagazinePistolHighCapacityIncendiary
   - MagazineLaser
@@ -100,6 +100,7 @@
   - WeaponBeamCannon
   - WeaponEnergyGunAdvanced
   - WeaponImmolator
+  - UnstableReactorHousing
 
 - type: latheRecipePack
   id: SecurityHardsuits
@@ -115,9 +116,3 @@
   recipes:
   - ClothingOuterHardsuitEVAPrisoner
   - ClothingHeadHelmetEVALarge
-
-- type: latheRecipePack
-  id: AdvancedPsionicProsthetics
-  recipes:
-  - PyroLeftArm
-  - ZapLeftArm
